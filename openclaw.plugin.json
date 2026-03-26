@@ -1,0 +1,86 @@
+{
+  "id": "openclaw-superpowers",
+  "kind": "lifecycle",
+  "name": "Superpowers (Brainstorming & Planning)",
+  "description": "Smart brainstorming and structured planning for OpenClaw agents. Detects task-like prompts and guides the agent through a design-first workflow: clarify → propose approaches → write spec → create implementation plan.",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean"
+      },
+      "autoDetect": {
+        "type": "boolean"
+      },
+      "language": {
+        "type": "string"
+      },
+      "specDir": {
+        "type": "string"
+      },
+      "planDir": {
+        "type": "string"
+      },
+      "skipPatterns": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "memoryEnabled": {
+        "type": "boolean"
+      },
+      "memory": {
+        "type": "object",
+        "properties": {
+          "baseUrl": { "type": "string" },
+          "apiKey": { "type": "string" },
+          "agentId": { "type": "string" },
+          "timeoutMs": { "type": "number" },
+          "recallLimit": { "type": "number" },
+          "recallScoreThreshold": { "type": "number" },
+          "recallMaxChars": { "type": "number" },
+          "recallTokenBudget": { "type": "number" }
+        }
+      }
+    }
+  },
+  "uiHints": {
+    "enabled": {
+      "label": "Enabled",
+      "help": "Enable/disable the superpowers plugin"
+    },
+    "autoDetect": {
+      "label": "Auto Detect",
+      "help": "Automatically detect task-like prompts and inject brainstorming flow"
+    },
+    "language": {
+      "label": "Language",
+      "placeholder": "auto",
+      "help": "Preferred language for brainstorming prompts (auto, zh, en)"
+    },
+    "specDir": {
+      "label": "Spec Directory",
+      "placeholder": "superpowers/specs",
+      "help": "Directory for design specs (relative to workspace)"
+    },
+    "planDir": {
+      "label": "Plan Directory",
+      "placeholder": "superpowers/plans",
+      "help": "Directory for implementation plans (relative to workspace)"
+    },
+    "skipPatterns": {
+      "label": "Skip Patterns",
+      "help": "Regex patterns for prompts that should skip brainstorming"
+    },
+    "memoryEnabled": {
+      "label": "Memory Integration",
+      "help": "Enable OpenViking memory recall before brainstorming and auto-capture after decisions"
+    },
+    "memory": {
+      "label": "Memory Config",
+      "help": "OpenViking connection settings for memory (uses same backend as openviking plugin)",
+      "advanced": true
+    }
+  }
+}

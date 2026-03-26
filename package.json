@@ -1,0 +1,26 @@
+{
+  "name": "openclaw-superpowers",
+  "version": "0.5.1",
+  "description": "Superpowers-inspired brainstorming, planning, debugging, and config safety plugin for OpenClaw agents",
+  "author": {
+    "name": "Bill Zhao",
+    "email": "zhaodibill@gmail.com",
+    "url": "https://www.linkedin.com/in/billzhaodi/"
+  },
+  "type": "module",
+  "files": [
+    "*.ts",
+    "prompts/*.ts",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "openclaw": {
+    "extensions": ["./index.ts"]
+  },
+  "keywords": ["openclaw", "superpowers", "brainstorming", "planning", "design-first"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billzhao/openclaw-superpowers"
+  }
+}
